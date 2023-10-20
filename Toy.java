@@ -1,15 +1,15 @@
 class Toy {
     private int toyId;
-    private String name;
-    private int quantity;
-    private double weight;
+    private String toyName;
+    private int toyQuantity;
+    private double toyWeight;
 
     // Конструктор класса Toy
-    public Toy(int toyId, String name, int quantity, double weight) {
+    public Toy(int toyId, String toyName, int toyQuantity, double toyWeight) {
         this.toyId = toyId;
-        this.name = name;
-        this.quantity = quantity;
-        this.weight = weight;
+        this.toyName = toyName;
+        this.toyQuantity = toyQuantity;
+        this.toyWeight = toyWeight;
     }
 
     // Геттеры и сеттеры для свойств игрушки
@@ -17,19 +17,19 @@ class Toy {
         return toyId;
     }
 
-    public String getName() {
-        return name;
+    public String gettoyName() {
+        return toyName;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int gettoyQuantity() {
+        return toyQuantity;
     }
 
-    public double getWeight() {
-        return weight;
+    public double gettoyWeight() {
+        return toyWeight;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public void setToyWeight(double toyWeight) {
+        this.toyWeight = toyWeight;
     }
 }
