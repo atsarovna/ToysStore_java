@@ -17,15 +17,15 @@ class Toy {
         return toyId;
     }
 
-    public String gettoyName() {
+    public String getToyName() {
         return toyName;
     }
 
-    public int gettoyQuantity() {
+    public int getToyQuantity() {
         return toyQuantity;
     }
 
-    public double gettoyWeight() {
+    public double getToyWeight() {
         return toyWeight;
     }
 

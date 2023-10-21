@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class ToyStore {
     private List<Toy> availableToys = new ArrayList<>();
@@ -19,4 +20,31 @@ public class ToyStore {
             }
         }
     }
+
+    // Выбор призовой игрушки
+    public Toy choosePrizeToy() {
+        double totalWeight = 0.0;
+        for (Toy toy : availableToys) {
+            totalWeight += toy.getToyWeight();
+        }
+
+        if (totalWeight == 0.0) {
+            System.out.println("Все игрушки разыграны.");
+            return null;
+        }
+
+        double randomNum = new Random().nextDouble() * totalWeight;
+        double cumulativeWeight = 0.0;
+
+        for (Toy toy : availableToys) {
+            cumulativeWeight += toy.getToyWeight();
+            if (randomNum <= cumulativeWeight) {
+                updateToyWeight(toy.getToyId(), toy.getToyQuantity() - 1);
+                return toy;
+            }
+        }
+        return null;
+    }
+
+
 }
