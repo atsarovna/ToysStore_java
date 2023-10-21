@@ -46,5 +46,15 @@ public class ToyStore {
         return null;
     }
 
+    // Обновление количества игрушек
+    public void updateToyQuantity(int toyId, int newQuantity) {
+        for (Toy toy : availableToys) {
+            if (toy.getToyId() == toyId) {
+                toy.setToyWeight(newQuantity);
+                break;
+            }
+        }
+    }
 
+    
 }
