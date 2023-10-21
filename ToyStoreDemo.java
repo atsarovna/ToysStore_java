@@ -16,12 +16,19 @@ public class ToyStoreDemo {
             System.out.println("2. Выйти из программы");
             System.out.print("Выберите действие: ");
 
-            String choice = scanner.next();
+            if (scanner.hasNextInt()) {
+                int choice = scanner.nextInt();
 
-            if ("1".equals(choice)) {
-                toyShop.getPrizeToy();
-            } else if ("2".equals(choice)) {
-                break;
+                if (choice == 1) {
+                    toyShop.getPrizeToy();
+                } else if (choice == 2) {
+                    break;
+                } else {
+                    System.out.println("Пожалуйста, введите 1 или 2.");
+                }
+            } else {
+                System.out.println("Пожалуйста, введите цифру 1 или 2.");
+                scanner.next(); // Считываем некорректный ввод, чтобы избежать зацикливания
             }
         }
         
