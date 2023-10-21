@@ -56,5 +56,15 @@ public class ToyStore {
         }
     }
 
-    
+    // Получение призовой игрушки и запись в файл
+    public void getPrizeToy() {
+        Toy prizeToy = choosePrizeToy();
+        if (prizeToy != null) {
+            availableToys.remove(prizeToy);
+            FileUtil.writeToFile("prizes.txt", "Приз: " + prizeToy.getToyName() + "\n");
+            System.out.println("Поздравляем! Вы выиграли: " + prizeToy.getToyName());
+        } else {
+            System.out.println("Извините, больше призов нет.");
+        }
+    }    
 }
